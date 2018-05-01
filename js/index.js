@@ -1353,7 +1353,6 @@ function BB8_Game(){
 }
 function Password_Enter(){
     setTimeout(function(){document.querySelector(".HuamanGames").style.display="block";},1500);
-    document.querySelector(".Loader").style.display="none";
     setTimeout(TextBoxEditTrue,7900);
     document.body.style.animation="toblack 1.5s";
     setTimeout(function(){document.body.style.background="black";},1500);
