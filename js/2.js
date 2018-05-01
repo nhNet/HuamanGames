@@ -1,10 +1,26 @@
+var
+// Obtain a reference to the canvas element using its id.
+htmlCanvas = document.getElementById('canvas'),
+// Obtain a graphics context on the canvas element for drawing.
+context = htmlCanvas.getContext('2d');
+
+function blackraw() {
+   context.strokeStyle = 'black';
+   context.lineWidth = '10000';
+   context.strokeRect(0, 0, window.innerWidth, window.innerHeight);
+}
+
+function resizeCanvas() {
+    htmlCanvas.width = window.innerWidth;
+    htmlCanvas.height = window.innerHeight;
+    blackraw();
+}
+
+window.addEventListener('resize', resizeCanvas, false);
+resizeCanvas();
+
 function SquareJump(){
-(function() {
-    var
-    // Obtain a reference to the canvas element using its id.
-    htmlCanvas = document.getElementById('canvas'),
-    // Obtain a graphics context on the canvas element for drawing.
-    context = htmlCanvas.getContext('2d');
+    
 
    // Start listening to resize events and draw canvas.
    initializetext();
@@ -42,9 +58,6 @@ function SquareJump(){
        }
     }
     function initializeMarioGame() {
-
-       window.addEventListener('resize', resizeCanvas, false);
-       resizeCanvas();
        var y = document.querySelector('.countDown');
        if (y.style.display === "block") {
            y.style.display = "none";
@@ -82,18 +95,7 @@ function SquareJump(){
     
     
 
-    function blackraw() {
-       context.strokeStyle = 'black';
-       context.lineWidth = '10000';
-       context.strokeRect(0, 0, window.innerWidth, window.innerHeight);
-    }
-
-    function resizeCanvas() {
-        htmlCanvas.width = window.innerWidth;
-        htmlCanvas.height = window.innerHeight;
-        blackraw();
-    }
-})();
+    
 }
 function initializefalse() {
    var y = document.querySelector('.countDown');
@@ -125,7 +127,7 @@ function BB9E_Game(){
     var isDown;
     var isShift;
     var lastDirection;
-    var visibleParticles = 0;
+    var visibleParticles  = 0;
     
     var car = new vehicle();
     
@@ -439,6 +441,7 @@ function BB9E_Game(){
                 break;
         }
     }
+    addEventListener("scroll", function(){isRight = true;setTimeout(function(){isRight = false;},2000);},2000);
     
     function onKeyUp(HuamanEvent) {
         var HuamanKey = HuamanEvent.keyCode;
@@ -896,6 +899,7 @@ function BB8_Game(){
                 break;
         }
     }
+    addEventListener("scroll", function(){isRight = true;setTimeout(function(){isRight = false;},2000);},2000);
     
     function onKeyUp(evt) {
         var key = evt.keyCode;
